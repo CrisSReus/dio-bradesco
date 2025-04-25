@@ -24,16 +24,18 @@ class Conta {
 
     // TODO: Adicione o método público para realizar saque:
     public boolean sacar(double valorSaque) {
-        saldoInicial = saldoInicial - valorSaque;
         if (saldoInicial<valorSaque) {
             return false;
-        } else {return true;}
+        } else {
+          saldoInicial = saldoInicial - valorSaque;
+          return true;}
     }
    
     // TODO: Crie o método público para realizar depósito
     public void depositar(double valorDeposito) {
         saldoInicial = saldoInicial + valorDeposito;
     }
+}
 
 public class Main {
 
