@@ -10,7 +10,6 @@ class Conta {
     public double saldoInicial;
     public int numeroConta;
     public String titular;   
-
     // TODO: Crie o construtor para inicializar os atributos da conta:
     public Conta(String titular, int numeroConta, double saldoInicial) {
         this.titular = titular;
@@ -26,7 +25,9 @@ class Conta {
     // TODO: Adicione o método público para realizar saque:
     public boolean sacar(double valorSaque) {
         saldoInicial = saldoInicial - valorSaque;
-        return true;
+        if (saldoInicial<valorSaque) {
+            return false;
+        } else {return true;}
     }
    
     // TODO: Crie o método público para realizar depósito
@@ -39,22 +40,28 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-
+        
+        System.out.println("Digite o nome do titular");
         String titular = sc.nextLine(); 
+        System.out.println("Digite o numero da conta");
         int numeroConta = sc.nextInt(); 
+        System.out.println("Digite o saldo");
         double saldoInicial = sc.nextDouble(); 
 
         Conta conta = new Conta(titular,numeroConta, saldoInicial);
 
+        System.out.println("Digite o valor do saque");
         // Operações de saque e depósito
         if (sc.hasNextDouble()) { 
-            double valorSaque = sc.nextDouble(); 
+            double valorSaque = sc.nextDouble();
             if (!conta.sacar(valorSaque)) { 
                 System.out.println("Saque invalido: Saldo insuficiente");
                 System.out.println("Saldo Atual: " + String.format("%.2f", conta.consultarSaldo()));
+                return;
             }
         }
 
+        System.out.println("Digite o valor do deposito");
         if (sc.hasNextDouble()) { 
             double valorDeposito = sc.nextDouble(); 
             conta.depositar(valorDeposito); 
