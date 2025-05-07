@@ -1,6 +1,6 @@
-/*import java.util.Scanner;
+import java.util.Scanner;
 
-public class App {
+public class Parcelamento {
 // Para ler e escrever dados em Java, aqui na DIO padronizamos da seguinte forma: 
 // - new Scanner(System.in): cria um leitor de Entradas, com métodos úteis com prefixo "next";
 // - System.out.println:.imprime um texto de Saída (Output) e pulando uma linha.
@@ -28,7 +28,7 @@ public class App {
         scanner.close();
     }
 }
-*/
+
 /*
  * Descrição
 Implemente um programa que simule o parcelamento de um pagamento. O programa deve receber o valor total e o número de parcelas, e calcular o valor de cada parcela. Caso o número de parcelas seja maior que o valor total, o programa deve indicar que o parcelamento não é possível.
